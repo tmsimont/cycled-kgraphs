@@ -55,6 +55,31 @@ function adjacencyMatrix(Cn) {
 
 }
 
+function splitMatrix(matrix, ksize) {
+	var splits = [];
+	for (var i = 1; i <= ksize/2; i++) {
+		
+		// create a new copy of matrix as new split
+		var split = [];
+		for (var j = 0; j < matrix.length; j++) {
+			split[j] = [];
+			for (var k = 0; k < matrix[j].length; k++) {
+				split[j][k] = matrix[j][k];
+			}
+		}
+		
+		// zero out the cross diagonal at this i size
+		for (var x = 0; x < matrix.length; x++) {
+			split[x][(x+i)%split[x].length] = 0;
+			split[x][((x-i)+split[x].length)%split[x].length] = 0;
+		}
+		
+		// track split
+		splits.push(split);
+	}
+	return splits;
+}
+
 
 // ------------------- TESTS ---------------------
 
@@ -69,6 +94,8 @@ var C52 = [2,2,2,2,2];
 var C53 = [3,3,3,3,3];
 
 
-console.log(adjacencyMatrix(C32));
-console.log(adjacencyMatrix(C52));
-console.log(adjacencyMatrix(C53));
+console.log(adjacencyMatrix([2,2,2,2,2]));
+//console.log(adjacencyMatrix(C52));
+//console.log(adjacencyMatrix(C53));
+
+console.log(splitMatrix(adjacencyMatrix(C53), 6));
