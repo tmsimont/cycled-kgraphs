@@ -57,7 +57,7 @@ function adjacencyMatrix(Cn) {
 
 function splitMatrix(matrix, ksize) {
 	var splits = [];
-	for (var i = 1; i <= ksize/2; i++) {
+	for (var i = 1; i <= ksize; i+=2) {
 		
 		// create a new copy of matrix as new split
 		var split = [];

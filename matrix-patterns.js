@@ -14,6 +14,7 @@ function getTablelizedMatrix(matrix, ksize) {
 	for (var i = 0; i < matrix.length; i++) {
 		var row = $("<tr />");
 		
+		var every_other_dist = 0;
 		for (var j = 0; j < matrix[i].length; j++) {
 			var col = $("<td />");
 			
@@ -224,8 +225,8 @@ $(document).ready(function() {
 						$("#swap").click(function() {
 							$("#swap").hide();
 							$("#backswap").show();
-							mainwrap.find(".diag-"+(swapshowing+1)+"-dist").addClass("show-diag");
-							$(".split-"+swapshowing).find(".diag-"+(swapshowing+1)+"-dist").addClass("show-diag");
+							mainwrap.find(".diag-"+((2*swapshowing)+1)+"-dist").addClass("show-diag");
+							$(".split-"+swapshowing).find(".diag-"+((2*swapshowing)+1)+"-dist").addClass("show-diag");
 							setTimeout(function() {
 								mainwrap.hide();
 								$(".split-"+swapshowing).show();
