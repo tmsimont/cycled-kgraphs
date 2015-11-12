@@ -12,6 +12,7 @@
 		<div class="measure">
 			<h2>Adjacency Matrix Maker</h2>
 			<div id="options">
+				<input type="button" id="restart" value="restart"  style="display:none;float:right;"/>
 				<label>C</label>
 				<select id="csize">
 					<option value="3">3</option>
@@ -21,9 +22,108 @@
 				[<span id="k-sizes"></span>]
 				<br />
 				<br />
-				<input id="go" type="submit" value="GO" />
+				<input id="go" type="submit" value="go" />
+			</div>
+			<div id="split-controls" style="display:none">
+				<button id="breakit">break it down now</button>
+				<button id="swap" style="display:none">split</button>
+				<button id="backswap" style="display:none">back to original</button>
 			</div>
 			<div id="table-container">
+			</div>
+			<div id="sidebar" style="display:none;">
+			<div class="table-wrapper">
+				<table id="s1">
+					<tbody>
+						<tr>
+							<td class="diag-0-dist k-group-1 k-group-2 show-k-group-2">0</td>
+							<td class="diag-1-dist k-group-1 k-group-2 show-diag show-k-group-2">1</td>
+							<td class="diag-2-dist k-group-2 show-k-group-2">1</td>
+							<td class="diag-3-dist k-group-2 show-k-group-2">1</td>
+						</tr>
+						<tr>
+							<td class="diag-1-dist k-group-1 k-group-2 show-diag show-k-group-2">1</td>
+							<td class="diag-0-dist k-group-1 k-group-2 show-k-group-2">0</td>
+							<td class="diag-1-dist k-group-2 show-diag show-k-group-2">1</td>
+							<td class="diag-2-dist k-group-2 show-k-group-2">1</td>
+						</tr>
+						<tr>
+							<td class="diag-2-dist k-group-2 show-k-group-2">1</td>
+							<td class="diag-1-dist k-group-2 show-diag show-k-group-2">1</td>
+							<td class="diag-0-dist k-group-2 k-group-3 show-k-group-2">0</td>
+							<td class="diag-1-dist k-group-2 k-group-3 show-diag show-k-group-2">1</td>
+						</tr>
+						<tr>
+							<td class="diag-3-dist k-group-2 show-k-group-2">1</td>
+							<td class="diag-2-dist k-group-2 show-k-group-2">1</td>
+							<td class="diag-1-dist k-group-2 k-group-3 show-diag show-k-group-2">1</td>
+							<td class="diag-0-dist k-group-2 k-group-3 show-k-group-2">0</td>
+						</tr>
+					</tbody>
+				</table>
+				<table id="s2" style="display:none">
+					<tbody>
+						<tr>
+							<td class="diag-0-dist k-group-1 k-group-2 show-k-group-2">0</td>
+							<td class="diag-1-dist k-group-1 k-group-2 show-k-group-2">1</td>
+							<td class="diag-2-dist k-group-2 show-k-group-2">1</td>
+							<td class="diag-3-dist k-group-2 show-k-group-2">1</td>
+						</tr>
+						<tr>
+							<td class="diag-1-dist k-group-1 k-group-2 show-k-group-2">1</td>
+							<td class="diag-0-dist k-group-1 k-group-2 show-k-group-2">0</td>
+							<td class="diag-1-dist k-group-2 show-diag show-k-group-2">1</td>
+							<td class="diag-2-dist k-group-2 show-k-group-2">1</td>
+						</tr>
+						<tr>
+							<td class="diag-2-dist k-group-2 show-k-group-2">1</td>
+							<td class="diag-1-dist k-group-2 show-diag show-k-group-2">1</td>
+							<td class="diag-0-dist k-group-2 k-group-3 show-k-group-2">0</td>
+							<td class="diag-1-dist k-group-2 k-group-3 show-k-group-2">1</td>
+						</tr>
+						<tr>
+							<td class="diag-3-dist k-group-2 show-k-group-2">1</td>
+							<td class="diag-2-dist k-group-2 show-k-group-2">1</td>
+							<td class="diag-1-dist k-group-2 k-group-3 show-k-group-2">1</td>
+							<td class="diag-0-dist k-group-2 k-group-3 show-k-group-2">0</td>
+						</tr>
+					</tbody>
+				</table>
+				<table id="s3" style="display:none">
+					<tbody>
+						<tr>
+							<td class="diag-0-dist k-group-1 k-group-2 show-k-group-2">0</td>
+							<td class="diag-1-dist k-group-1 k-group-2 show-k-group-2">1</td>
+							<td class="diag-2-dist k-group-2 show-k-group-2">1</td>
+							<td class="diag-3-dist k-group-2 show-diag show-k-group-2">1</td>
+						</tr>
+						<tr>
+							<td class="diag-1-dist k-group-1 k-group-2 show-k-group-2">1</td>
+							<td class="diag-0-dist k-group-1 k-group-2 show-k-group-2">0</td>
+							<td class="diag-1-dist k-group-2 show-k-group-2">1</td>
+							<td class="diag-2-dist k-group-2 show-k-group-2">1</td>
+						</tr>
+						<tr>
+							<td class="diag-2-dist k-group-2 show-k-group-2">1</td>
+							<td class="diag-1-dist k-group-2 show-k-group-2">1</td>
+							<td class="diag-0-dist k-group-2 k-group-3 show-k-group-2">0</td>
+							<td class="diag-1-dist k-group-2 k-group-3 show-k-group-2">1</td>
+						</tr>
+						<tr>
+							<td class="diag-3-dist k-group-2 show-diag show-k-group-2">1</td>
+							<td class="diag-2-dist k-group-2 show-k-group-2">1</td>
+							<td class="diag-1-dist k-group-2 k-group-3 show-k-group-2">1</td>
+							<td class="diag-0-dist k-group-2 k-group-3 show-k-group-2">0</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</div>
+			<div id="presentation-controls" style="display:none">
+				<input style="float:right;" type="button" id="sidebarbutton" value="sidebar" />
+				<label>click k-groups: </label><input type="checkbox" id="showkgroups" /><br/><br/>
+				<label>click stripes: </label><input type="checkbox" id="showstripes" /><br/><br/>
+				<input type="button" id="split" value="split" />
 			</div>
 		</div>
 	</div>

@@ -6,31 +6,49 @@ body {
 	padding-bottom:30px;
 }
 
-#table-container table,
-#table-container table tr,
-#table-container table tr td {
+table,
+table tr,
+table tr td {
 	border-collapse:collapse;
 }
 
-#table-container table td {
+.table-wrapper {
+	padding:10px 0px;
+	border:1px solid #ccc;
+	border-width:1px 0px;
+	margin-bottom:10px;
+}
+
+td {
+	cursor:pointer;
+}
+
+table td {
 	width:30px;
 	line-height:30px;
 	text-align:center;
 }
 
 @for $i from 0 through 10 {
+	.show-k-group-#{$i}.k-group-#{$i} {
+			background-color: darken(#52fb47, 10*$i); 
+	}
+}
+
+
+@for $i from 0 through 10 {
 	.show-diag.diag-#{$i}-dist {
 			@if($i % 2 == 0) {
-				background-color: darken(#FB4752, 5*$i); 
+				background-color: darken(#FB4752, 5*$i);
+				color:white;
 			}
 			@else {
 				background-color: darken(#4752fb, 5*$i); 
+				color:white;
 			}
 	}
 }
 
-@for $i from 0 through 10 {
-	.show-k-group.k-group-#{$i} {
-			background-color: darken(#52fb47, 10*$i); 
-	}
+#split-controls {
+	padding-bottom:10px;
 }
