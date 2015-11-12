@@ -1,0 +1,36 @@
+body {
+	
+}
+
+#options {
+	padding-bottom:30px;
+}
+
+#table-container table,
+#table-container table tr,
+#table-container table tr td {
+	border-collapse:collapse;
+}
+
+#table-container table td {
+	width:30px;
+	line-height:30px;
+	text-align:center;
+}
+
+@for $i from 0 through 10 {
+	.show-diag.diag-#{$i}-dist {
+			@if($i % 2 == 0) {
+				background-color: darken(#FB4752, 5*$i); 
+			}
+			@else {
+				background-color: darken(#4752fb, 5*$i); 
+			}
+	}
+}
+
+@for $i from 0 through 10 {
+	.show-k-group.k-group-#{$i} {
+			background-color: darken(#52fb47, 10*$i); 
+	}
+}

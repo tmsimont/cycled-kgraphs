@@ -1,0 +1,80 @@
+#options {
+  padding-bottom: 30px; }
+
+#table-container table,
+#table-container table tr,
+#table-container table tr td {
+  border-collapse: collapse; }
+
+#table-container table td {
+  width: 30px;
+  line-height: 30px;
+  text-align: center; }
+
+.show-diag.diag-0-dist {
+  background-color: #fb4752; }
+
+.show-diag.diag-1-dist {
+  background-color: #2e3bfa; }
+
+.show-diag.diag-2-dist {
+  background-color: #fa1523; }
+
+.show-diag.diag-3-dist {
+  background-color: #0514f0; }
+
+.show-diag.diag-4-dist {
+  background-color: #d70512; }
+
+.show-diag.diag-5-dist {
+  background-color: #0410be; }
+
+.show-diag.diag-6-dist {
+  background-color: #a5040d; }
+
+.show-diag.diag-7-dist {
+  background-color: #030b8c; }
+
+.show-diag.diag-8-dist {
+  background-color: #730309; }
+
+.show-diag.diag-9-dist {
+  background-color: #02075b; }
+
+.show-diag.diag-10-dist {
+  background-color: #420105; }
+
+.show-k-group.k-group-0 {
+  background-color: #52fb47; }
+
+.show-k-group.k-group-1 {
+  background-color: #23fa15; }
+
+.show-k-group.k-group-2 {
+  background-color: #12d705; }
+
+.show-k-group.k-group-3 {
+  background-color: #0da504; }
+
+.show-k-group.k-group-4 {
+  background-color: #097303; }
+
+.show-k-group.k-group-5 {
+  background-color: #054201; }
+
+.show-k-group.k-group-6 {
+  background-color: #011000; }
+
+.show-k-group.k-group-7 {
+  background-color: black; }
+
+.show-k-group.k-group-8 {
+  background-color: black; }
+
+.show-k-group.k-group-9 {
+  background-color: black; }
+
+.show-k-group.k-group-10 {
+  background-color: black; }
+
+/*# sourceMappingURL=styles.css.map */
